@@ -50,7 +50,6 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(isDisplayModal)
     document.body.style.overflow = `${isDisplayModal ? 'hidden' : 'auto'}`
   }, [isDisplayModal])
 
