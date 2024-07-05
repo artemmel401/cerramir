@@ -1,0 +1,36 @@
+@import "../../mixins";
+
+.container{
+  @include flex-center-center;
+  width: fit-content;
+  position: relative;
+  user-select: none;
+  @media screen and (max-width: 375px) {
+    max-width: 290px;
+  }
+}
+
+.text{
+  @include text-title;
+}
+
+.img{
+  position: absolute;
+  right: -42px;
+  top: -7px;
+  @media screen and (max-width: 1230px) {
+    top: -17px;
+  }
+  @media screen and (max-width: 1210px) {
+    width: 29px;
+    height: 29px;
+    top: -17px;
+    right: -34px;
+  }
+  @media screen and (max-width: 960px) {
+    width: 22px;
+    height: 22px;
+    top: -13px;
+    right: -20px;
+  }
+}

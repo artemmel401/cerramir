@@ -1,0 +1,78 @@
+
+@mixin flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-center-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-center-column {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin text-title {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 46px;
+  text-align: center;
+  width: fit-content;
+  @media screen and (max-width: 1210px) {
+    font-size: 36px;
+    line-height: 36px;
+  }
+  @media screen and (max-width: 1230px){
+    font-size: 26px;
+    line-height: 26px;
+  }
+
+}
+
+@mixin text-standart {
+  font-size: 20px;
+  line-height: 22px;
+  @media screen and (max-width: 960px) {
+    font-size: 18px;
+    line-height: 19.8px;
+  }
+}
+
+@mixin margin-big {
+  margin-bottom: 140px;
+  @media screen and (max-width: 1230px){
+    margin-bottom: 80px;
+  }
+  @media screen and (max-width: 960px){
+    margin-bottom: 70px;
+  }
+}
+
+@mixin app-block {
+  @include flex-center-column;
+  @include margin-big;
+  width: 100%;
+}
+@mixin max-width-block{
+  max-width: 1400px;
+  @media screen and (max-width: 1300px) {
+    max-width: 1200px;
+  }
+  @media screen and (max-width: 1210px) {
+    max-width: 950px;
+  }
+  @media screen and (max-width: 960px) {
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

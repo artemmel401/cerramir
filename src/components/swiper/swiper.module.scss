@@ -1,0 +1,40 @@
+@import "../../mixins";
+
+.swiper{
+  @include flex-center-column;
+  width: 100%;
+  @media screen and (max-width: 960px) {
+    height: fit-content;
+  }
+}
+
+.navigation{
+  margin-top: 40px;
+  cursor: pointer;
+  user-select: none;
+  @media screen and (max-width: 375px) {
+    margin-top: 30px;
+  }
+  &Svg{
+    &:not(:last-child){
+      margin-right: 20px;
+    }
+    &_disable{
+      cursor: no-drop;
+    }
+  }
+}
+
+.pagination{
+  @include flex-center;
+  height: 4px;
+  column-gap: 2px;
+}
+.bullet{
+  flex: 1;
+  background-color: #D6D6D6;
+  height: 4px;
+  &_active{
+    background-color: var(--color-purple);
+  }
+}
