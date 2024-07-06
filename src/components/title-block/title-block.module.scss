@@ -5,8 +5,8 @@
   width: fit-content;
   position: relative;
   user-select: none;
-  @media screen and (max-width: 375px) {
-    max-width: 290px;
+  @media screen and (max-width: 413px) {
+    max-width: 275px;
   }
 }
 
@@ -31,6 +31,6 @@
     width: 22px;
     height: 22px;
     top: -13px;
-    right: -20px;
+    right: -23px;
   }
 }

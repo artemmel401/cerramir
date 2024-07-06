@@ -310,7 +310,7 @@ function App() {
             <TitleBlock name='Сотрудничество' />
           </div>
           <div className={styles.cooperation__staff}>
-            {widthSize > 375 ?
+            {widthSize > 560 ?
             <>
             {staff.map((employee) => (
               <div className={`${styles.cooperation__employee} ${styles.employee}`}>

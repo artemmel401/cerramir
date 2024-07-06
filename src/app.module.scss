@@ -162,7 +162,7 @@
   }
   &__intro{
     @include flex-center-center;
-    @include margin-big;
+    @include margin-big-intro;
     position: relative;
     background-image: url(/intro.png);
     flex-direction: column;
@@ -281,7 +281,7 @@
   @include max-width-block;
   margin: 0 auto;
   overflow-x: hidden;
-
+  padding-top: 20px;
   &__line{
     width: 100%;
     height: 2px;
