@@ -28,6 +28,8 @@ function App() {
   const [activeEventFilter, setActiveEventFilter] = useState<string | undefined>()
 
   const [activePartnerIndex, setActivePartnerIndex] = useState(1)
+ 
+  const [activePath, setActivePath] = useState('')
 
   const changeActiveShop = (index: number) => {
     const newShopList = [...shopsList]
@@ -54,9 +56,9 @@ function App() {
   }, [isDisplayModal])
 
   return (
-    <>
+    <div className={styles.container}>
       <header className={styles.header}>
-        <Navigation isFooter={false} />
+        <Navigation activePath={activePath} isFooter={false} changeActivePath={setActivePath}/>
       </header>
       <div className={styles.header__intro}>
           <h1 className={styles.header__h1}>Lorem ipsum dolor sit amet</h1>
@@ -372,7 +374,7 @@ function App() {
         </div>
       </main>
       <footer className={styles.footer}>
-        <Navigation isFooter/>
+        <Navigation isFooter activePath={activePath} changeActivePath={setActivePath}/>
         <div className={styles.footer__links}>
           <a className={styles.footer__link} href='https://keramir-shop.ru/pravila-dostavky/'>Правила доставки</a>
           <a className={styles.footer__link} href='https://keramir-shop.ru/Pravila_ispolzovaniya_podarochnyh_sertifikatov.pdf'>Правила использования подарочных сертификатов КераМир</a>
@@ -380,20 +382,21 @@ function App() {
         </div>
       </footer>
       {isDisplayModal && <ModalWindow closeForm={() => { setIsDisplayModal(false) }} />}
-    </>
+    </div>
   )
 }
 
 type NavigationProps = {
   isFooter: boolean
+  activePath: string
+  changeActivePath: (newPath: string) => void
 }
 
-function Navigation({isFooter}:NavigationProps) {
+function Navigation({isFooter, activePath, changeActivePath}:NavigationProps) {
   const [displayMenu, setDisplayMenu] = useState(false)
-  const [activePath, setActivePath] = useState('')
   const navigatePage = (path: string) => {
     setDisplayMenu(false)
-    setActivePath(path)
+    changeActivePath(path)
   }
   return (
     <div className={styles.header__content}>
