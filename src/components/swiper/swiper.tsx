@@ -58,7 +58,6 @@ export default function SwiperComponent({ children, length, seeCards, changeActi
           bulletClass: styles.bullet,
           bulletActiveClass: styles.bullet_active
         }}
-        autoplay={{ delay:2000 }}
         className={styles.swiper}
       >
         {children}
